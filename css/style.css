@@ -1,0 +1,286 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /* 2. Remove default margin */
+  * {
+    margin: 0;
+  }
+  
+  body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    font-family: var(--font-1);
+    background-color: #000000;
+    color: #ffffff;
+  }
+  
+  /* 5. Improve media defaults */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  /* 6. Inherit fonts for form controls */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  /* 7. Avoid text overflows */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  /* 8. Improve line wrapping */
+  p {
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+  
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+
+:root{
+    --font-1: "Montserrat", serif;
+    --font-2: "Roboto", serif;
+    --font-3: "Gochi Hand", serif;
+
+}
+/* /////////////////HEADER CONTENT///////////////////// */
+
+.header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px solid red; */
+    padding: 2rem 5rem;
+    width: 100%;
+}
+.logo p{
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+.nav-link{
+    width: 30rem;
+}
+ul{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    font-weight: 500;
+}
+.soc-link li{
+    font-size: 2rem;
+    
+}
+.soc-link li i {
+    transition: all 0.5s ease-in-out;
+}
+
+.soc-link li i:hover {
+    transform: scale(1.1);
+    /* Use text-shadow for a glow effect */
+    text-shadow: 0 0 20px rgba(168, 255, 53, 0.7); /* Green glow */
+    color: #A8FF35; 
+    cursor: pointer;
+}a{
+    text-decoration: none;
+    color: #ffffff;
+}
+.nav-link li {
+    transition: all 0.5s ease-in-out;
+}
+
+.nav-link li:hover {
+    transform: scale(1.1);
+    text-shadow: 0 0 20px rgba(168, 255, 53, 0.7); 
+    color: #A8FF35;
+    cursor: pointer;
+}
+
+/* /////////////////HERO CONTENT///////////////////// */
+.hero-content{
+    position: absolute;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url('../img/background.svg'); /* Path to your SVG file */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* padding: 2rem; */
+    
+}
+
+.main-content{
+    width: 50vw;
+    /* border: 1px solid red; */
+
+}
+.main-content h1{
+    font-family: var(--font-2);
+    font-size: 4.5rem;
+    line-height: 1.1;
+    letter-spacing: 2px;
+    font-weight: 700;
+    transform: scaleY(.9);
+}
+.main-content p{
+    padding: 1.5rem 6.5rem;
+}
+.main-content .btn{
+    display: flex;
+    /* border: 1px solid red; */
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.main-content button {
+    padding: .5rem 3rem;
+    margin: auto;
+    font-family: var(--font-2);
+    font-weight: 900;
+    font-size: 1.1rem;
+    border-radius: 2rem;
+    background-color: #A8FF35;
+    color: #000000;
+    border: none; /* Optional: removes border if desired */
+    outline: none; /* Optional: removes the outline */
+    transition: all 0.5s ease; /* Smooth transition for the glow effect */
+    cursor: pointer;
+}
+.main-content svg{
+    position: fixed;
+    right: 37rem;
+    left: auto;
+}
+.main-content button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px 5px rgba(168, 255, 53, 0.3); /* Green glow */
+}
+.software{
+    /* border: 1px solid red; */
+    width: 60vw;
+    display: flex;
+    justify-content: center;
+}
+.software svg{
+    width: 50vw;
+    height: auto;
+    margin-top: 3rem;
+}
+#menu-icon {
+    display: none;
+    font-size: 30px;  /* Size of the hamburger icon */
+    cursor: pointer;
+    color: #333;  /* Icon color */
+}
+ 
+
+
+
+@media (max-width: 768px) {
+    body{
+        font-size: 0.8rem;
+    }
+    .header {
+        width: 100vw;
+        padding: 2rem;
+        margin: 0;
+    }
+    .hero-content{
+        
+    margin-top: 8rem;
+    }
+    .nav-link{
+        width: 20rem;
+    }
+    .main-content{
+        width: 80vw;
+    }
+    .main-content h1{
+        font-size: 3rem;
+    }
+    .main-content svg{
+        right: 8rem;
+    }
+    .software svg{
+        width: 30rem;
+        height: auto;
+    }
+    #menu-icon {
+        display: block;
+    }
+
+    /* Hide nav links on mobile */
+    .nav-link {
+        display: none;
+        position: absolute;
+        top: 4rem;  /* Adjust based on header height */
+        left: 0;
+        right: 0;
+        margin: auto;
+        background-color: #181818;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Show nav links when hamburger is clicked */
+    .nav-link.active {
+        display: flex;
+        justify-content: center;
+        height: 10rem;
+        width: 30rem;
+        border-radius: 1rem;
+        
+    }
+    .nav-link.active ul{
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .nav-link.active a{
+        color: #ffffff;
+    }
+    .soc-link ul li a{
+        font-size: 1rem;
+    }
+}
+
+
+@media (max-width: 700px) {
+    .btn svg{
+        display: none;
+    }
+}
+
+
+@media (max-width: 480px) {
+     
+}
